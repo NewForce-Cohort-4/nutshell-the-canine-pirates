@@ -1,6 +1,7 @@
 import {saveArticle} from "./ArticleDataProvider.js"
+import { ArticlesList } from "./ArticlesList.js"
 
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector("#articles-button")
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "new-article") {
@@ -42,6 +43,7 @@ eventHub.addEventListener("click", clickEvent => {
 
       // Change API state and application state, we're calling the saveNote function - which takes in the info from the argument of newNote and writes it to the local api, then we're calling the NoteList function, which I believe just gets everything again
       saveArticle(newArticle)
+      .then(ArticlesList)
       console.log(newArticle)
   }
 })
