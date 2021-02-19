@@ -15,24 +15,36 @@ textarea {
 	
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Patua One", serif;
-  letter-spacing: 2px;
-}
-
 /*TASKS*/
 #tasks-printing {
     display: flex;
     flex-direction: row;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+}
+
+#tasks-content{
+background-color: rgb(159, 212, 102);
+margin-top: 1em;
+
+
 }
 
 .task-card {
     border: 1px black solid;
-    margin: 2em
+    margin: 2em;
+    background-color: rgb(251, 252, 238);
+    border-radius: 1em;
+    padding: .5em
 }
 
 .task-form-button {
-  margin: 2em;
+ 
+}
 
+#tasks-form{
+  padding-left: 2em;
+}
+
+.task-image {
+  height: 20vh
 }

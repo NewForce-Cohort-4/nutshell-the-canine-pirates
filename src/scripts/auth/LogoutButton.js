@@ -1,3 +1,4 @@
+import { TaskList } from "../tasks/taskList.js"
 import { LoginForm } from "./LoginForm.js"
 import { RegisterForm } from "./RegisterForm.js"
 const eventHub = document.querySelector(".auth--logout")
@@ -15,6 +16,7 @@ eventHub.addEventListener("click", (eventObject) => {
         // Reprint the login and register form
         LoginForm()
         RegisterForm()
+        TaskList() //Angie added this so that the task list clears upon logout
     }
 })
 

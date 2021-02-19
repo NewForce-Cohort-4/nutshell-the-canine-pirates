@@ -1,4 +1,4 @@
-import { getTasks, useTasks } from "./taskDataProvider.js"
+import { getTasks, moveNote, useTasks } from "./taskDataProvider.js"
 import { TaskCard } from "./task.js";
 
 //targeting the section in index.html where tasks will print
@@ -10,20 +10,34 @@ export const TaskList = () => {
 //getting the data to be printed
         getTasks(). then(() => {
             let tasksArray = useTasks();
-            console.log(tasksArray);
-
-//declaring the empty string that will populate as array is looped through
             let tasksHTMLString = '';
 //looping through the tasks array--which contains objects from json--and running the card function on each to build the HTML string
-            for(let task of tasksArray) {
-                tasksHTMLString += TaskCard(task)
-            };
+          
+               
+                tasksArray = tasksArray.filter((task) => {
+                    if(task.userId == sessionStorage.getItem("activeUser"))
+                    return !task.completed
+                })
 
+                for (let task of tasksArray){
+                    tasksHTMLString += TaskCard(task)
+                }
+            
+           
             taskContainer.innerHTML = `
             ${tasksHTMLString}
             `
 
-
         })
 
 }
+
+
+taskContainer.addEventListener("change", (eventObject) => {
+    if(eventObject.target.id.startsWith("taskCheckbox")){
+        const idToMove = eventObject.target.id.split("--")[1]
+        moveNote(idToMove)
+        .then(TaskList())
+    }
+
+})

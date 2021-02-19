@@ -22,3 +22,15 @@ export const saveTask = task => {
     .then(getTasks) // After we add a note, get them all again so our new note appears in our collection
 
 }
+
+export const moveNote = taskId => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "PATCH",
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({
+            completed: true,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+}
