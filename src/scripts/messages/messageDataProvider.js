@@ -22,8 +22,8 @@ export const saveMessage = message => {
     
 }
 
- export const deleteMessage = messageId => {
-    return fetch(`http://localhost:8088/messages/${messageId}`, {
+ export const deleteMessage = message => {
+    return fetch(`http://localhost:8088/messages/${message}`, {
         method: "DELETE"
     })
 }

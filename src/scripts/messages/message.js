@@ -1,7 +1,7 @@
-export function Message (singleMessage) {
+export function Message (singleMessage, relatedUser) {
     return `
         <section class="message-box">
-            <p>${singleMessage.userId}</p>
+            <p>${relatedUser.email}</p>
             <p>${singleMessage.message}</p>
         </section>
         <button id="delete-note--${singleMessage.id}">Delete</button>
