@@ -1,12 +1,15 @@
 import {LogOutButton} from "./auth/LogoutButton.js"
-import {} from "./articles/ArticlesForm.js"
-import {ArticlesList}  from "./articles/ArticlesList.js"
-import {newFormButton} from "./articles/ArticlesForm.js"
+// import the functions to list a user's articles in the dashboard
+import {ListArticles} from "./articles/ArticleListView.js"
+// add a save button for new articles
+import {NewArticleButton} from "./articles/ArticleSaveForm.js"
 
 export const Nutshell = () => {
 
     LogOutButton()
       // Render all your UI components here
-      ArticlesList()
-      newFormButton()
+     
+      // Article components
+      ListArticles()
+      NewArticleButton()
 }
