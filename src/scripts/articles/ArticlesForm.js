@@ -1,22 +1,34 @@
 import {saveArticle} from "./ArticleDataProvider.js"
 import { ArticlesList } from "./ArticlesList.js"
 
-const eventHub = document.querySelector("#articles-button")
+// a reference to the div where the New Article button will print
+const buttonDiv = document.querySelector("#articles-button")
 
+// function that prints the New Article button to the articles-button div
+export const newFormButton = () => {
+  buttonDiv.innerHTML = `
+    <button id="new-article">New Article</button>
+  `
+}
+
+// get a reference to some html that will be there on pageload
+const eventHub = document.querySelector(".dashboard")
+
+// listen for a click in the dashboard
 eventHub.addEventListener("click", clickEvent => {
+  // if someone clicks on the New Article button, show the form
   if (clickEvent.target.id === "new-article") {
     eventHub.innerHTML = `
     <div class="article-form">
       <input type="text" placeholder="Article Title" id="title" required>
       <input type="text" placeholder="Synopsis" id="synopsis" required>
       <input type="text" placeholder="Article URL" id="url" required>
-      <input type="date" id="date">
+      <input type="date" id="date" required>
       <button id="save-article">Save Article</button>
     </div>
   `
   }
 })
-
 
 // if there's a click event in the main element, we run this function with clickEvent as the parameter
 eventHub.addEventListener("click", clickEvent => {
@@ -44,6 +56,5 @@ eventHub.addEventListener("click", clickEvent => {
       // Change API state and application state, we're calling the saveNote function - which takes in the info from the argument of newNote and writes it to the local api, then we're calling the NoteList function, which I believe just gets everything again
       saveArticle(newArticle)
       .then(ArticlesList)
-      console.log(newArticle)
   }
 })

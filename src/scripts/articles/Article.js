@@ -5,6 +5,7 @@ export function Article(articleObject){
       <p>Title: ${articleObject.title}</p>
       <p>Synopsis: ${articleObject.synopsis}</p>
       <p>URL: ${articleObject.url}</p>
+      <button id="deleteNote--${articleObject.id}">Delete</button>
   </section>
   `
 }

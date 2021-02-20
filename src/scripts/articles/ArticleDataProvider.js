@@ -28,7 +28,7 @@ export const saveArticle = article => {
   .then(getArticles) // After we add a note, get them all again so our new note appears in our collection
 }
 
-export const deleteArticles = articleId => {
+export const deleteArticle = articleId => {
   return fetch(`http://localhost:8088/articles/${articleId}`, {
       method: "DELETE"
   })
