@@ -7,10 +7,10 @@
  * 
  */
 
-import { bmArticle } from "./ArticleProvider.js"
+import { printArticle } from "./ArticleProvider.js"
 import { ListArticles } from "./ArticleListView.js"
 
-// Define DOM element to put the save form in
+// Define DOM element to put the save button in
 const saveTarget = document.querySelector(".articles-widget__form")
 
 // Build a button that will show the save form when clicked by the user
@@ -64,7 +64,7 @@ saveTarget.addEventListener("click", clickEvent => {
         }
 
         // Add the newArticle object to the local server by running a save function from the Provider component and then update article list
-        bmArticle(newArticle)
+        printArticle(newArticle)
         .then(ListArticles())
         .then(NewArticleButton())
     }

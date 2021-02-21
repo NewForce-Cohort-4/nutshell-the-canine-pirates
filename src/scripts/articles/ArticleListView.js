@@ -5,7 +5,7 @@
 * and copy all the articles on the server for a user's account, and the module to delete
 */
 
-import {mkArticles, cpArticles, rmArticle} from "./ArticleProvider.js"
+import {getArticles, copyArticles, deleteArticle} from "./ArticleProvider.js"
 import {NewArticleButton} from "./ArticleSaveForm.js"
 
 // Define DOM elements to view the articles in
@@ -17,9 +17,9 @@ export const ListArticles = () => {
   // Print the header of the news widget
   titleTarget.innerHTML = `<h2>News</h2>`
   // Refresh list of articles and make a copy to display in the dashboard
-  mkArticles()
+  getArticles()
   .then(() => {
-    const ALLarticles = cpArticles()
+    const ALLarticles = copyArticles()
     // Test to make sure articles array is created
     // console.log(ALLarticles)
 
@@ -70,7 +70,7 @@ listTarget.addEventListener("click", clickEvent => {
     // console.log("the delete button for article", deleteID, "was clicked")
 
     // Use the delete function with the ID of the article to delete
-    rmArticle(deleteID)
+    deleteArticle(deleteID)
     .then(ListArticles())
     .then(NewArticleButton())
   }
