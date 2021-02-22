@@ -27,6 +27,7 @@ textarea {
 .tasks-primary {
   display: flex;
   flex-direction: column;
+  
  
 }
 
@@ -34,22 +35,27 @@ textarea {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
+    
 }
-
 #tasks-content {
-  background-color: rgb(30, 197, 94);
-margin-top: 1em;
+
 display: flex;
 flex-direction: column;
+background-color:seagreen;
+margin-top: 2em
+
 }
 
 .task-heading{
-  margin-left: 1em
+  margin-left: 1em;
 }
+
 .task-entry{
   width: 25vw;
   margin-bottom: 1em
 }
+
 .date-entry{
   width: 25vw
 }
@@ -71,7 +77,6 @@ flex-direction: column;
     background-color: rgb(251, 252, 238);
     border-radius: 1em;
     padding: .5em;
-    border-color:rgb(255, 224, 100);
     flex-basis: 20%
 }
 

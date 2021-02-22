@@ -6,7 +6,12 @@ import { TaskList } from "./taskList.js"
 //targets "tasks-form" id in  index.html as the place to print the form
 
 export function TaskButton(){
-    
+
+    let taskHeadingContainer = document.querySelector(".task-heading")
+    taskHeadingContainer.innerHTML = `
+                <h1 class="section-heading">To-Do List</h1>
+                <button class="task-form-button" id="new-task-button">New Task</button>`
+              
 }
 
 
