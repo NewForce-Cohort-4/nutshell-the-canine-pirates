@@ -1,8 +1,6 @@
 import { Nutshell } from "../Nutshell.js";
-
 const contentTarget = document.querySelector(".auth--register");
 const eventHub = document.querySelector(".container");
-
 // When the user clicks on the register button
 eventHub.addEventListener("click", (e) => {
   if (e.target.id === "register--button") {
