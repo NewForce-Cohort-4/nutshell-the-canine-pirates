@@ -17,7 +17,6 @@ export const messageList = () => {
         
         //.map acts like a loop through each of the messages
         const arrayOfMessages = allTheMessages.map(singleMessage => {
-
             //the current message in the loop has a .find method that is looking for the individual user that its message is related too and is converting it to compare even values with the "+"
             const relatedUser = allTheUsers.find(user => user.id === +singleMessage.userId)
             //sending the singleMessage and relatedUser as arguments to the Message function which returns a an HTML representation
@@ -25,7 +24,7 @@ export const messageList = () => {
 
             return htmlString   
         })
-        
+      
         //setting a new variable equal to all the individual HTML object representaions that come back and making it one long single HTML object without the commas with the .join array method.
         const StringOfAllNewMessages = arrayOfMessages.join("")
 
