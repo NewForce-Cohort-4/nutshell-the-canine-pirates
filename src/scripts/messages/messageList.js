@@ -3,6 +3,7 @@ import { Message } from './message.js'
 import { getUsers, useUsers } from "../auth/userDataProvider.js"
 
 
+
 //an export function that is building a list for the messages and its related users
 export const messageList = () => {
     getMessages()
@@ -17,6 +18,7 @@ export const messageList = () => {
         
         //.map acts like a loop through each of the messages
         const arrayOfMessages = allTheMessages.map(singleMessage => {
+            
             //the current message in the loop has a .find method that is looking for the individual user that its message is related too and is converting it to compare even values with the "+"
             const relatedUser = allTheUsers.find(user => user.id === +singleMessage.userId)
             //sending the singleMessage and relatedUser as arguments to the Message function which returns a an HTML representation

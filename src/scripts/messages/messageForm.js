@@ -11,13 +11,20 @@ export const messageForm = () => {
         let allMessages = useMessages()
         let allUsers = useUsers()
         
-        contentTarget.innerHTML = `
-        <input type="text" placeholder="Text" id="messageText">
+        contentTarget.innerHTML = `<h2>Chat</h2>
+        <input type="text" placeholder="Ask a personal question!" id="messageText">
         <button type="button" id="sendMessage">Send</button>
         `
     })
     
 }
+
+const currentDate = new Date()
+const localTimeString = currentDate.toLocaleTimeString(undefined, {
+  hour:   '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+})
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "sendMessage") {
@@ -25,6 +32,7 @@ contentTarget.addEventListener("click", clickEvent => {
         const newMessage = {
             message: document.querySelector("#messageText").value,
             userId: sessionStorage.getItem("activeUser"),
+            timestamp: localTimeString
         }
 
         saveMessage(newMessage)

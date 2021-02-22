@@ -3,9 +3,11 @@ import { RegisterForm } from "./RegisterForm.js"
 const eventHub = document.querySelector(".auth--logout")
 const contentTarget = document.querySelector(".auth--logout")
 const printingTarget = document.querySelector(".articles-widget__list")
+
 export const LogOutButton = () => {
     contentTarget.innerHTML = `<button id="logout-button">Log Out</button>`
 }
+
 eventHub.addEventListener("click", (eventObject) => {
     if(eventObject.target.id === "logout-button"){
         // clear session storage
