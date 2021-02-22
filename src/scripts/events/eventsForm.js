@@ -10,23 +10,22 @@ export const EventForm = () => {
         <div class="container">
         <h2>Event Form </h2>
         
-          
-          
           <div class="form-group">
-          <label for="dEntry">Date of Event:</label>
+          <label for="dEntry">Date of Event:<br></label>
           <input type="date" class="form-control" id="start" placeholder="Date of Event" name="dEntry">
-        </div>
+          </div>
           <div class="form-group">
-            <label for="eName">Event Name:</label>
+          <br>
+            <label for="eName">Event Name:<br></label>
             <input type="text" class="form-control" id="eName" placeholder="Event Name" name="eName">
           </div>
           <div class="form-group">
-            <label for="lEntry">Event Location:</label>
+          <br>
+            <label for="lEntry">Event Location:<br></label>
             <input type="text" class="form-control" id="lEntry" placeholder="Event Location" name="lEntry">
           </div>
-      
+          <br>
           <button id="saveEvent">Save Event</button>
-
       </div>   
        
     `
@@ -41,10 +40,11 @@ let locationInput= document.getElementById("lEntry").value;
         // Make a new object representation of a note
         const newEvent = {
             // Key/value pairs here
-        date: dateInput,
+            date: dateInput,
             eventName: nameInput,
-            locationInput: typeInput
+            locationName: locationInput
         }
+       alert("this is the date " + dateInput);
 
         // Change API state and application state
         saveEvent(newEvent)
