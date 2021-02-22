@@ -2,12 +2,7 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-//Tasks//
-// import { getTasks, useTasks } from "./tasks/taskDataProvider.js"
-// import { TaskCard } from "./tasks/task.js";
-// import { TaskList } from "./tasks/taskList.js"
-// import { } from "./tasks/taskForm.js"
-// TaskList()
+
 
 
 /*

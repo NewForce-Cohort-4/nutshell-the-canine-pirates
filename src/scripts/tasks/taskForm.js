@@ -4,8 +4,16 @@ import { TaskList } from "./taskList.js"
 
 
 //targets "tasks-form" id in  index.html as the place to print the form
-const formTarget = document.querySelector("#tasks-form")
 
+export function TaskButton(){
+    
+}
+
+
+
+
+
+const formTarget = document.querySelector("#tasks-form")
 
 const TaskForm = () => { //creates form that appears when "new task" button is clicked
 
@@ -19,7 +27,6 @@ const TaskForm = () => { //creates form that appears when "new task" button is c
 
 }
 
-
 const eventHub = document.querySelector("main")
 
 //single event listener contains the "New Task" and "Save Task" button directives
@@ -28,6 +35,7 @@ eventHub.addEventListener("click", clickEvent => {
 
 
     if(clickEvent.target.id === "new-task-button"){ //when clicked, the button runs the new task form
+        console.log("click")
         TaskForm()
     }
    

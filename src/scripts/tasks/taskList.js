@@ -26,9 +26,11 @@ export const TaskList = () => {
             
            //inserts the new string into the HTML
             taskContainer.innerHTML = `
-            
+           
             
             ${tasksHTMLString}
+
+     
             
 
             `
