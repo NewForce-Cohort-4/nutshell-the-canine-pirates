@@ -19,9 +19,11 @@ export const saveTask = task => {
         },
         body: JSON.stringify(task)
     })
-    .then(getTasks) // After we add a note, get them all again so our new note appears in our collection
+    .then(getTasks) // After we add a task, get them all again so our new note appears in our collection
 
 }
+
+//this is the function that will change the "completed" value from "false" (default) to "true" when activated by the checkbox
 
 export const moveNote = taskId => {
     return fetch(`http://localhost:8088/tasks/${taskId}`, {
