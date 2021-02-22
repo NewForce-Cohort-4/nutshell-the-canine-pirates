@@ -10,6 +10,7 @@ messageList()
 import {messageForm} from './messages/messageForm.js'
 messageForm()
 
+
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -27,3 +28,4 @@ if(!activeUser){
 } else {
     Nutshell()
 }
+
