@@ -4,9 +4,6 @@ import { Nutshell } from "./Nutshell.js"
 import {EventForm} from "./events/eventsForm.js"
 import {  Event } from "./events/event.js"
 
-
-
-
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -14,7 +11,6 @@ import {  Event } from "./events/event.js"
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
-
 
 const activeUser = sessionStorage.getItem("activeUser")
 
