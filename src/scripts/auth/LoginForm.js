@@ -37,6 +37,3 @@ const render = () => {
 export const LoginForm = () => {
     render()
 }
-
-
-

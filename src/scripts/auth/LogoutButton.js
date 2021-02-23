@@ -1,3 +1,5 @@
+import { messageForm } from "../messages/messageForm.js"
+import { messageList } from "../messages/messageList.js"
 import { TaskList } from "../tasks/taskList.js"
 import { LoginForm } from "./LoginForm.js"
 import { RegisterForm } from "./RegisterForm.js"
@@ -5,10 +7,14 @@ import { RegisterForm } from "./RegisterForm.js"
 
 const eventHub = document.querySelector(".auth--logout")
 const contentTarget = document.querySelector(".auth--logout")
+const printingTarget = document.querySelector(".articles-widget__list")
+
+
 // const taskClear = document.querySelector("#task-content")
 export const LogOutButton = () => {
     contentTarget.innerHTML = `<button id="logout-button">Log Out</button>`
 }
+
 eventHub.addEventListener("click", (eventObject) => {
     if(eventObject.target.id === "logout-button"){
         // clear session storage
@@ -21,6 +27,8 @@ eventHub.addEventListener("click", (eventObject) => {
         // Reprint the login and register form
         LoginForm()
         RegisterForm()
+        messageList()
+        messageForm()
         TaskList() //Angie added this so that the task list clears upon logout
        
     }

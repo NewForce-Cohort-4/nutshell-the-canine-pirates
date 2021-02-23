@@ -52,8 +52,3 @@ const render = () => {
 export const RegisterForm = () => {
   render();
 };
-
-
-
-
-
