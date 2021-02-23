@@ -23,8 +23,8 @@ export const TaskList = () => {
 
                     return task.userId == sessionStorage.getItem("activeUser") && !task.completed
 
-                    if(task.userId == sessionStorage.getItem("activeUser"))
-                    return !task.completed
+                    // if(task.userId == sessionStorage.getItem("activeUser"))
+                    // return !task.completed
                 })
                 //runs a loop on the modified tasksArray; for each task object in the array, it will run the TaskCard function and add it to the HTML string
                 for (let task of tasksArray){

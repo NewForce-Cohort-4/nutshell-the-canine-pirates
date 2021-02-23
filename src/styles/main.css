@@ -14,12 +14,63 @@ textarea {
 	
 	
 }
-.section-heading {
+/* .section-heading {
   color: white;
   font-size: 2.0em;
   margin-bottom: 0em;
   margin-top: 0em
   
+} */
+
+
+main {
+  display: flex
+
+}
+
+.dashboard {
+  width: 60vw;
+  margin-top: .5em
+}
+
+#chat {
+  background-color: #ffb26b;
+  width: 17vw;
+  margin-top: .5em;
+  margin-bottom: 1em
+}
+
+#events {
+  background-color: #ff7b54;
+  width: 23vw;
+  margin: .5em
+}
+
+/* ARTICLES */
+
+.articles-widget {
+  background-color:#ffd56b;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+}
+
+.articles-widget__card {
+  margin: 1em;
+  background-color: #F8FFCA;
+  border-radius: 1em;
+  padding: .5em;
+  /* flex-basis: 20% */
+}
+.articles-widget__header {
+  margin-left: 1em
+  
+}
+
+#new-Article {
+  margin: .5em;
+  margin-left: 1em
 }
 
 /*TASKS*/
@@ -28,7 +79,6 @@ textarea {
   display: flex;
   flex-direction: column;
   
- 
 }
 
 #tasks-printing {
@@ -42,8 +92,8 @@ textarea {
 
 display: flex;
 flex-direction: column;
-background-color:seagreen;
-margin-top: 1em
+background-color:#939b62; 
+margin-top: 1em;
 
 }
 
@@ -60,40 +110,26 @@ margin-top: 1em
   width: 25vw
 }
 #save-task-button{
-  width: 10vw;
-  height: 3vw;
-  border-radius: 1.5em;
-  margin-bottom: .5em;
-  color: rgb(211, 207, 207);
-  background-color: rgb(238, 64, 64);
-  font-weight: bolder;
-  font-size: small
+ width: 15vw
   
 }
 
 .task-card {
-    border: 1px black solid;
+    
     margin: 1em;
-    background-color: rgb(251, 252, 238);
+    background-color: #F8FFCA;
     border-radius: 1em;
     padding: .5em;
     flex-basis: 20%
 }
 
 .task-form-button {
-  width: 10vw;
-  height: 2.5vw;
-  border-radius: 1em;
-  background-color:rgb(255, 224, 100);
-  border-color:rgb(255, 224, 100);
-  color: grey;
-  font-weight:bolder;
-  font-size: small
-  
+  width: 15vw;
+
  
 }
 
-#tasks-form{
+#tasks-form{ 
   padding-left: 1em;
   display: flex;
   flex-direction: column;
@@ -102,7 +138,7 @@ margin-top: 1em
   
 }
 body {
-  background-color: azure;
+  background-color: F1FEC6;
 }
 
 /* Header Component */
@@ -126,8 +162,9 @@ footer {
   justify-content: space-evenly;
   background-color: black;
   color: #fff;
-  position: fixed;
+  position:fixed;
   bottom: 0;
-  left: 0;
+  left: 1;
+  right: 1;
   width: 100%;
 }

@@ -9,7 +9,7 @@ export function TaskButton(){
 
     let taskHeadingContainer = document.querySelector(".task-heading")
     taskHeadingContainer.innerHTML = `
-                <h1 class="section-heading">To-Do List</h1>
+                <h2 class="">To-Do List</h2>
                 <button class="task-form-button" id="new-task-button">New Task</button>`
               
 }
