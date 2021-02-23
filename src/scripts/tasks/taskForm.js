@@ -22,6 +22,10 @@ const formTarget = document.querySelector("#tasks-form")
 
 const TaskForm = () => { //creates form that appears when "new task" button is clicked
 
+    if( (sessionStorage.getItem("activeUser") === null)){
+    taskContainer.innerHTML = ""
+}
+else{
     formTarget.innerHTML = `
     <input class="date-entry" type="date" id="task-date-input" placeholder="Select date."></input>
     <input class="task-entry" type="textarea" placeholder="Type task here." id="task-name-input"></input>
@@ -29,7 +33,7 @@ const TaskForm = () => { //creates form that appears when "new task" button is c
    
     
     `
-
+}
 }
 
 const eventHub = document.querySelector("main")

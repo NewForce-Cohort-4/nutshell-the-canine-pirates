@@ -24,7 +24,8 @@ textarea {
 
 
 main {
-  display: flex
+  display: flex;
+  padding: 5em 0
 
 }
 
@@ -37,7 +38,7 @@ main {
   background-color: #ffb26b;
   width: 17vw;
   margin-top: .5em;
-  margin-bottom: 1em
+  margin-bottom: .5em
 }
 
 #events {

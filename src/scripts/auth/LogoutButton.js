@@ -1,6 +1,8 @@
 import { TaskList } from "../tasks/taskList.js"
 import { LoginForm } from "./LoginForm.js"
 import { RegisterForm } from "./RegisterForm.js"
+
+
 const eventHub = document.querySelector(".auth--logout")
 const contentTarget = document.querySelector(".auth--logout")
 // const taskClear = document.querySelector("#task-content")
@@ -20,6 +22,7 @@ eventHub.addEventListener("click", (eventObject) => {
         LoginForm()
         RegisterForm()
         TaskList() //Angie added this so that the task list clears upon logout
+       
     }
 })
 
