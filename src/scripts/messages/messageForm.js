@@ -1,10 +1,14 @@
 import { getUsers, useUsers } from "../auth/userDataProvider.js"
 import { getMessages, saveMessage, useMessages } from "./messageDataProvider.js"
-import {Message} from './message.js'
+
 
 const contentTarget = document.querySelector("#message-form")
 
 export const messageForm = () => {
+    if (sessionStorage.getItem('activeUser') === null) {
+        const contentTarget = document.querySelector("#message-form")
+        contentTarget.innerHTML = ""
+    } else {
     getMessages()
     getUsers()
     .then(() => {
@@ -17,7 +21,7 @@ export const messageForm = () => {
         `
     })
     
-}
+}}
 
 const currentDate = new Date()
 const localTimeString = currentDate.toLocaleTimeString(undefined, {

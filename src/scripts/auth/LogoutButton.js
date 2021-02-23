@@ -1,8 +1,11 @@
+import { messageForm } from "../messages/messageForm.js"
+import { messageList } from "../messages/messageList.js"
 import { LoginForm } from "./LoginForm.js"
 import { RegisterForm } from "./RegisterForm.js"
 const eventHub = document.querySelector(".auth--logout")
 const contentTarget = document.querySelector(".auth--logout")
 const printingTarget = document.querySelector(".articles-widget__list")
+
 
 export const LogOutButton = () => {
     contentTarget.innerHTML = `<button id="logout-button">Log Out</button>`
@@ -19,5 +22,7 @@ eventHub.addEventListener("click", (eventObject) => {
         // Reprint the login and register form
         LoginForm()
         RegisterForm()
+        messageList()
+        messageForm()
     }
 })

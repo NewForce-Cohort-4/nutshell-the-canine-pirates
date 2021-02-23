@@ -6,6 +6,10 @@ import { getUsers, useUsers } from "../auth/userDataProvider.js"
 
 //an export function that is building a list for the messages and its related users
 export const messageList = () => {
+  if (sessionStorage.getItem('activeUser') === null) {
+    const messageContainer = document.querySelector("#message-print")
+    messageContainer.innerHTML = ""
+  } else {
     getMessages()
     getUsers()
     .then(() => {
@@ -24,7 +28,8 @@ export const messageList = () => {
             //sending the singleMessage and relatedUser as arguments to the Message function which returns a an HTML representation
             const htmlString = Message(singleMessage, relatedUser)
 
-            return htmlString   
+            return htmlString  
+         
         })
       
         //setting a new variable equal to all the individual HTML object representaions that come back and making it one long single HTML object without the commas with the .join array method.
@@ -32,8 +37,8 @@ export const messageList = () => {
 
         messageContainer.innerHTML = StringOfAllNewMessages
     })
-    
 }
+
 
 const eventHub = document.querySelector("#message-print")
 
@@ -44,4 +49,5 @@ eventHub.addEventListener("click", (eventObject) => {
     deleteMessage(idToDelete) // Call the deleteNote function and pass in the appropriate id
     .then(messageList) // Then call messageList to refresh the list of notes
   }
-});
+})
+}
