@@ -7,6 +7,7 @@ eventHub.addEventListener("click", (e) => {
     // Get the email they typed into the form
     const email = document.querySelector("#register--email").value;
     if (email !== "") {
+      
       // Check to see if the user exists
       fetch(`http://localhost:8088/users?email=${email}`)
         .then((response) => response.json())

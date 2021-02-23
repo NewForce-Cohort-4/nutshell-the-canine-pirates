@@ -6,6 +6,7 @@ import {  Event } from "./events/event.js"
 
 
 
+
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -20,7 +21,10 @@ const activeUser = sessionStorage.getItem("activeUser")
 if(!activeUser){
     LoginForm()
     RegisterForm()
+
 } else {
     Nutshell()
+ 
+
 }
 
