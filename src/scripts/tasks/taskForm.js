@@ -9,7 +9,7 @@ export function TaskButton(){
 
     let taskHeadingContainer = document.querySelector(".task-heading")
     taskHeadingContainer.innerHTML = `
-                <h1 class="section-heading">To-Do List</h1>
+                <h2 class="">To-Do List</h2>
                 <button class="task-form-button" id="new-task-button">New Task</button>`
               
 }
@@ -22,6 +22,10 @@ const formTarget = document.querySelector("#tasks-form")
 
 const TaskForm = () => { //creates form that appears when "new task" button is clicked
 
+    if( (sessionStorage.getItem("activeUser") === null)){
+    taskContainer.innerHTML = ""
+}
+else{
     formTarget.innerHTML = `
     <input class="date-entry" type="date" id="task-date-input" placeholder="Select date."></input>
     <input class="task-entry" type="textarea" placeholder="Type task here." id="task-name-input"></input>
@@ -29,7 +33,7 @@ const TaskForm = () => { //creates form that appears when "new task" button is c
    
     
     `
-
+}
 }
 
 const eventHub = document.querySelector("main")

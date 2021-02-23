@@ -7,6 +7,10 @@ let taskContainer = document.querySelector("#tasks-printing")
 
 //function that will make the list print
 export const TaskList = () => {
+    if( (sessionStorage.getItem("activeUser") === null)){
+        taskContainer.innerHTML = ""
+    }
+    else{
 //getting the data to be printed
         getTasks(). then(() => {
             let tasksArray = useTasks();
@@ -16,8 +20,11 @@ export const TaskList = () => {
             //running a filter on the tasksArray declared above; for each individual task, if the userId is the same as the active user, it will return the tasks NOT completed (marked "false" in the json) and will make tasksArray equal only those returned
           
                 tasksArray = tasksArray.filter((task) => {
-                    if(task.userId == sessionStorage.getItem("activeUser"))
-                    return !task.completed
+
+                    return task.userId == sessionStorage.getItem("activeUser") && !task.completed
+
+                    // if(task.userId == sessionStorage.getItem("activeUser"))
+                    // return !task.completed
                 })
                 //runs a loop on the modified tasksArray; for each task object in the array, it will run the TaskCard function and add it to the HTML string
                 for (let task of tasksArray){
@@ -36,7 +43,7 @@ export const TaskList = () => {
             `
 
         })
-
+    }
 }
 
 

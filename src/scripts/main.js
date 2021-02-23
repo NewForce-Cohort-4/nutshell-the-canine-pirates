@@ -15,7 +15,10 @@ const activeUser = sessionStorage.getItem("activeUser")
 if(!activeUser){
     LoginForm()
     RegisterForm()
+
 } else {
     Nutshell()
+ 
+
 }
 
